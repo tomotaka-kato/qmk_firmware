@@ -1,0 +1,131 @@
+   1               		.file	"process_unicode.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.process_unicode,"ax",@progbits
+  11               	.global	process_unicode
+  13               	process_unicode:
+  14               	.LVL0:
+  15               	.LFB111:
+  16               		.file 1 "quantum/process_keycode/process_unicode.c"
+   1:quantum/process_keycode/process_unicode.c **** /* Copyright 2016 Jack Humbert
+   2:quantum/process_keycode/process_unicode.c ****  *
+   3:quantum/process_keycode/process_unicode.c ****  * This program is free software: you can redistribute it and/or modify
+   4:quantum/process_keycode/process_unicode.c ****  * it under the terms of the GNU General Public License as published by
+   5:quantum/process_keycode/process_unicode.c ****  * the Free Software Foundation, either version 2 of the License, or
+   6:quantum/process_keycode/process_unicode.c ****  * (at your option) any later version.
+   7:quantum/process_keycode/process_unicode.c ****  *
+   8:quantum/process_keycode/process_unicode.c ****  * This program is distributed in the hope that it will be useful,
+   9:quantum/process_keycode/process_unicode.c ****  * but WITHOUT ANY WARRANTY; without even the implied warranty of
+  10:quantum/process_keycode/process_unicode.c ****  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  11:quantum/process_keycode/process_unicode.c ****  * GNU General Public License for more details.
+  12:quantum/process_keycode/process_unicode.c ****  *
+  13:quantum/process_keycode/process_unicode.c ****  * You should have received a copy of the GNU General Public License
+  14:quantum/process_keycode/process_unicode.c ****  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  15:quantum/process_keycode/process_unicode.c ****  */
+  16:quantum/process_keycode/process_unicode.c **** 
+  17:quantum/process_keycode/process_unicode.c **** #include "process_unicode.h"
+  18:quantum/process_keycode/process_unicode.c **** #include "action_util.h"
+  19:quantum/process_keycode/process_unicode.c **** #include "eeprom.h"
+  20:quantum/process_keycode/process_unicode.c **** 
+  21:quantum/process_keycode/process_unicode.c **** bool process_unicode(uint16_t keycode, keyrecord_t *record) {
+  17               		.loc 1 21 61 view -0
+  18               		.cfi_startproc
+  19               		.loc 1 21 61 is_stmt 0 view .LVU1
+  20 0000 CF93      		push r28
+  21               	.LCFI0:
+  22               		.cfi_def_cfa_offset 3
+  23               		.cfi_offset 28, -2
+  24 0002 DF93      		push r29
+  25               	.LCFI1:
+  26               		.cfi_def_cfa_offset 4
+  27               		.cfi_offset 29, -3
+  28               	/* prologue: function */
+  29               	/* frame size = 0 */
+  30               	/* stack size = 2 */
+  31               	.L__stack_usage = 2
+  32 0004 EC01      		movw r28,r24
+  22:quantum/process_keycode/process_unicode.c ****   if (keycode >= QK_UNICODE && keycode <= QK_UNICODE_MAX && record->event.pressed) {
+  33               		.loc 1 22 3 is_stmt 1 view .LVU2
+  34               		.loc 1 22 6 is_stmt 0 view .LVU3
+  35 0006 97FF      		sbrs r25,7
+  36 0008 00C0      		rjmp .L2
+  37               		.loc 1 22 58 discriminator 1 view .LVU4
+  38 000a FB01      		movw r30,r22
+  39 000c 8281      		ldd r24,Z+2
+  40               	.LVL1:
+  41               		.loc 1 22 58 discriminator 1 view .LVU5
+  42 000e 8823      		tst r24
+  43 0010 01F0      		breq .L2
+  23:quantum/process_keycode/process_unicode.c ****     unicode_input_start();
+  44               		.loc 1 23 5 is_stmt 1 view .LVU6
+  45 0012 0E94 0000 		call unicode_input_start
+  46               	.LVL2:
+  24:quantum/process_keycode/process_unicode.c ****     register_hex(keycode & 0x7FFF);
+  47               		.loc 1 24 5 view .LVU7
+  48 0016 CE01      		movw r24,r28
+  49 0018 9F77      		andi r25,127
+  50 001a 0E94 0000 		call register_hex
+  51               	.LVL3:
+  25:quantum/process_keycode/process_unicode.c ****     unicode_input_finish();
+  52               		.loc 1 25 5 view .LVU8
+  53 001e 0E94 0000 		call unicode_input_finish
+  54               	.LVL4:
+  55               	.L2:
+  26:quantum/process_keycode/process_unicode.c ****   }
+  27:quantum/process_keycode/process_unicode.c ****   return true;
+  56               		.loc 1 27 3 view .LVU9
+  28:quantum/process_keycode/process_unicode.c **** }
+  57               		.loc 1 28 1 is_stmt 0 view .LVU10
+  58 0022 81E0      		ldi r24,lo8(1)
+  59               	/* epilogue start */
+  60 0024 DF91      		pop r29
+  61 0026 CF91      		pop r28
+  62               	.LVL5:
+  63               		.loc 1 28 1 view .LVU11
+  64 0028 0895      		ret
+  65               		.cfi_endproc
+  66               	.LFE111:
+  68               		.text
+  69               	.Letext0:
+  70               		.file 2 "/usr/local/Cellar/avr-gcc/8.3.0/avr/include/stdint.h"
+  71               		.file 3 "/usr/local/Cellar/avr-gcc/8.3.0/lib/avr-gcc/8/gcc/avr/8.3.0/include/stddef.h"
+  72               		.file 4 "tmk_core/common/keyboard.h"
+  73               		.file 5 "tmk_core/common/action.h"
+  74               		.file 6 "lib/lufa/LUFA/Drivers/USB/Core/AVR8/../StdRequestType.h"
+  75               		.file 7 "lib/lufa/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h"
+  76               		.file 8 "lib/lufa/LUFA/Drivers/USB/Core/USBTask.h"
+  77               		.file 9 "lib/lufa/LUFA/Drivers/USB/Core/HostStandardReq.h"
+  78               		.file 10 "/usr/local/Cellar/avr-gcc/8.3.0/avr/include/stdio.h"
+  79               		.file 11 "tmk_core/common/report.h"
+  80               		.file 12 "tmk_core/common/host.h"
+  81               		.file 13 "tmk_core/common/debug.h"
+  82               		.file 14 "quantum/keycode_config.h"
+  83               		.file 15 "quantum/keymap.h"
+  84               		.file 16 "quantum/rgblight_types.h"
+  85               		.file 17 "quantum/rgblight.h"
+  86               		.file 18 "tmk_core/common/action_layer.h"
+  87               		.file 19 "tmk_core/common/timer.h"
+  88               		.file 20 "tmk_core/common/action_util.h"
+  89               		.file 21 "/usr/local/Cellar/avr-gcc/8.3.0/avr/include/stdlib.h"
+  90               		.file 22 "quantum/quantum.h"
+  91               		.file 23 "quantum/process_keycode/process_unicode_common.h"
+  92               		.file 24 "quantum/quantum_keycodes.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 process_unicode.c
+/var/folders/fs/52b7g59j2v54kt47tqq0zw4r0000gn/T//ccupZaNi.s:2      *ABS*:000000000000003e __SP_H__
+/var/folders/fs/52b7g59j2v54kt47tqq0zw4r0000gn/T//ccupZaNi.s:3      *ABS*:000000000000003d __SP_L__
+/var/folders/fs/52b7g59j2v54kt47tqq0zw4r0000gn/T//ccupZaNi.s:4      *ABS*:000000000000003f __SREG__
+/var/folders/fs/52b7g59j2v54kt47tqq0zw4r0000gn/T//ccupZaNi.s:5      *ABS*:0000000000000000 __tmp_reg__
+/var/folders/fs/52b7g59j2v54kt47tqq0zw4r0000gn/T//ccupZaNi.s:6      *ABS*:0000000000000001 __zero_reg__
+/var/folders/fs/52b7g59j2v54kt47tqq0zw4r0000gn/T//ccupZaNi.s:13     .text.process_unicode:0000000000000000 process_unicode
+
+UNDEFINED SYMBOLS
+unicode_input_start
+register_hex
+unicode_input_finish
