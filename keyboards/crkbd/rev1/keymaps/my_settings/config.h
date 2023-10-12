@@ -18,6 +18,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#define MASTER_LEFT
+
+#define TAPPING_TERM 100
+#define RETRO_TAPPING
+#define PERMISSIVE_HOLD
+
 #ifdef RGB_MATRIX_ENABLE
 #    define RGB_MATRIX_LED_COUNT 54
 #    define RGB_MATRIX_SPLIT \
