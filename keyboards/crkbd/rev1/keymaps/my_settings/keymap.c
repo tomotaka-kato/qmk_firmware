@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [2] = LAYOUT_split_3x6_3( // 数値・記号がメインのレイヤー
   //,------------------.-----------------------------------                    ,-----------------------------------------------------.
-       KC_GRV,  KC_BSLS,   KC_7,    KC_8,    KC_9, XXXXXXX,                      XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN, XXXXXXX,   KC_F2,
+       KC_GRV,  KC_BSLS,   KC_7,    KC_8,    KC_9, XXXXXXX,                      XXXXXXX, XXXXXXX, KC_LPRN, KC_RPRN,  KC_EQL,   KC_F2,
   //|--------+---------|-------+--------+--------+--------+                    |--------+--------+--------+--------+--------+--------|
       _______,   KC_EQL,   KC_4,    KC_5,    KC_6, XXXXXXX,                      XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_SCLN, XXXXXXX,
   //|--------+---------|-------+--------+--------+--------+                    |--------+--------+--------+--------+--------+--------|
