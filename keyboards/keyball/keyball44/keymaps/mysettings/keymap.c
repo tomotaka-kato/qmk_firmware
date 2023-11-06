@@ -47,7 +47,7 @@ uint16_t click_timer;   // タイマー。状態に応じて時間で判定す�
 uint16_t to_reset_time = 800; // この秒数(千分の一秒)、CLICKABLE状態ならクリックレイヤーが無効になる。 For this number of seconds (milliseconds), the click layer is disabled if in CLICKABLE state.
 
 const int16_t to_clickable_movement = 0; // クリックレイヤーが有効になるしきい値
-const uint16_t click_layer = 3;          // マウス入力が可能になった際に有効になるレイヤー。Layers enabled when mouse input is enabled
+const uint16_t click_layer = 4;          // マウス入力が可能になった際に有効になるレイヤー。Layers enabled when mouse input is enabled
 
 int16_t mouse_record_threshold = 30; // ポインターの動きを一時的に記録するフレーム数。 Number of frames in which the pointer movement is temporarily recorded.
 int16_t mouse_move_count_ratio = 5;  // ポインターの動きを再生する際の移動フレームの係数。 The coefficient of the moving frame when replaying the pointer movement.
@@ -221,11 +221,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,------------------.----------------------------------------------------------------------                ,-----------------------------------------------------.
     KC_TAB          , KC_Q , KC_W   , KC_E   , KC_R         , KC_T           ,                                  KC_Y  , KC_U    , KC_I     , KC_O     , KC_P     , KC_MINS  ,
   //,---------------+--.---+--------+--------+------------------------------------------------                ,-------+---------------------------------------------.
-    LCTL_T(KC_ESC)  , KC_A , KC_S   , KC_D   , KC_F         , KC_G           ,                                  KC_H  , KC_J    , KC_K     , KC_L     , KC_SCLN  , LT(4, KC_QUOT)  ,
+    LCTL_T(KC_ESC)  , KC_A , KC_S   , KC_D   , KC_F         , KC_G           ,                                  KC_H  , KC_J    , KC_K     , KC_L     , LT(5, KC_SCLN), KC_QUOT ,
   //,---------------+--.---+--------+--------+------------------------------------------------                ,-------+---------------------------------------------.
     KC_LSFT         , KC_Z , KC_X   , KC_C   , KC_V         , KC_B           ,                                  KC_N  , KC_M    , KC_COMM  , KC_DOT   , KC_SLSH  , KC_EQL  ,
   //,---------------+--.---+--------+--------+------------------------------------------------                ,-------+---------------------------------------------.
-                             KC_LALT, KC_LGUI, LT(2, KC_F15), LCTL_T(KC_SPC) , LSFT_T(KC_F16),         KC_BSPC, KC_ENT, RCTL_T(KC_LNG2),     KC_RALT               , LT(3, KC_BSPC)
+                             KC_LALT, KC_LGUI, LT(2, KC_F15), LCTL_T(KC_SPC) , LSFT_T(KC_F16),         KC_BSPC, KC_ENT, RCTL_T(KC_LNG2),     KC_RALT               , MO(3)
                           //--------+--------+--------------+----------------+---------------'       `--------+-------+---------+--------------------------.
   ),
 
@@ -250,17 +250,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           _______  , _______  , _______ ,   _______, _______  ,                    KC_DEL   , KC_DOT , _______, _______        , _______
   ),
 
-  [3] = LAYOUT_universal( // カーソルレイヤー/マウスレイヤー
+  [3] = LAYOUT_universal( // カーソルレイヤー
     _______  ,  KC_F1   , KC_F2    , KC_F3   , KC_F4    , KC_F5    ,                                         XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX   , XXXXXXX   ,
-    _______  ,  _______ , _______  , KC_UP   , KC_ENT   , KC_DEL   ,                                         KC_MY_BTN3  , KC_MY_BTN1  , KC_MY_BTN2    , KC_UP  , XXXXXXX  , XXXXXXX   ,
-    _______  ,  _______ , KC_LEFT  , KC_DOWN , KC_RGHT  , KC_BSPC  ,                                         XXXXXXX  , XXXXXXX  , KC_LEFT  , KC_DOWN  , KC_RIGHT  , _______  ,
+    _______  ,  _______ , _______  , KC_UP   , KC_ENT   , KC_DEL   ,                                         XXXXXXX  , XXXXXXX  , KC_UP    , XXXXXXX  , XXXXXXX  , XXXXXXX   ,
+    _______  ,  _______ , KC_LEFT  , KC_DOWN , KC_RGHT  , KC_BSPC  ,                                         XXXXXXX  , KC_LEFT  , KC_DOWN  , KC_RIGHT  , XXXXXXX , _______  ,
                   _______  , _______ , _______  ,         _______  , MO(4)  ,                   _______  , _______  , _______       , _______  , _______
   ),
 
-  [4] = LAYOUT_universal( // スクロールレイヤー
-          _______  ,  KC_F1   , KC_F2    , KC_F3   , KC_F4    , KC_F5    ,                                         XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX   , XXXXXXX   ,
+  [4] = LAYOUT_universal( // マウスレイヤー
+    _______  ,  KC_F1   , KC_F2    , KC_F3   , KC_F4    , KC_F5    ,                                         XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX   , XXXXXXX   ,
+    _______  ,  _______ , _______  , KC_UP   , KC_ENT   , KC_DEL   ,                                         KC_MY_BTN3  , KC_MY_BTN1  , KC_MY_BTN2    , KC_LSFT  , MO(5)  , XXXXXXX   ,
+          _______  ,  _______ , KC_LEFT  , KC_DOWN , KC_RGHT  , KC_BSPC  ,                                         XXXXXXX  , LALT(KC_LEFT)  , LALT(KC_RIGHT)  , XXXXXXX  , XXXXXXX  , _______  ,
+                  _______  , _______ , _______  ,         _______  , MO(4)  ,                   _______  , _______  , _______       , _______  , _______
+  ),
+
+
+  [5] = LAYOUT_universal( // スクロールレイヤー
+          QK_BOOT  ,  KC_F1   , KC_F2    , KC_F3   , KC_F4    , KC_F5    ,                                         XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX   , XXXXXXX   ,
           _______  ,  _______ , _______  , KC_UP   , KC_ENT   , KC_DEL   ,                                         KC_MY_BTN3  , KC_MY_BTN1  , KC_MY_BTN2    , KC_UP  , XXXXXXX  , XXXXXXX   ,
-          _______  ,  _______ , KC_LEFT  , KC_DOWN , KC_RGHT  , KC_BSPC  ,                                         XXXXXXX  , XXXXXXX  , KC_LEFT  , KC_DOWN  , KC_RIGHT  , _______  ,
+          _______  ,  _______ , KC_LEFT  , KC_DOWN , KC_RGHT  , KC_BSPC  ,                                         XXXXXXX  , LALT(KC_LEFT)  , LALT(KC_RIGHT)  , XXXXXXX  , XXXXXXX  , _______  ,
           _______  , _______ , _______  ,         _______  , _______  ,                   _______  , _______  , _______       , _______  , _______
           ),
 };
@@ -268,7 +276,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     // Auto enable scroll mode when the highest layer is 3
-    keyball_set_scroll_mode(get_highest_layer(state) == 4);
+    keyball_set_scroll_mode(get_highest_layer(state) == 5);
     return state;
 }
 
