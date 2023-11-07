@@ -223,9 +223,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,---------------+--.---+--------+--------+------------------------------------------------                ,-------+---------------------------------------------.
     LCTL_T(KC_ESC)  , KC_A , KC_S   , KC_D   , KC_F         , KC_G           ,                                  KC_H  , KC_J    , KC_K     , LT(5, KC_L), KC_SCLN, KC_QUOT ,
   //,---------------+--.---+--------+--------+------------------------------------------------                ,-------+---------------------------------------------.
-    KC_LSFT         , KC_Z , KC_X   , KC_C   , KC_V         , KC_B           ,                                  KC_N  , KC_M    , KC_COMM  , KC_DOT   , KC_SLSH  , KC_EQL  ,
+    KC_LSFT         , KC_Z , KC_X   , KC_C   , KC_V         , KC_B           ,                                  KC_N  , KC_M    , KC_COMM  , KC_DOT   , LT(3, KC_SLSH)  , KC_EQL  ,
   //,---------------+--.---+--------+--------+------------------------------------------------                ,-------+---------------------------------------------.
-                             KC_LALT, KC_LGUI, LT(2, KC_F15), LCTL_T(KC_SPC) , LSFT_T(KC_F16),         KC_BSPC, LSFT_T(KC_ENT), RCTL_T(KC_LNG2),     KC_RALT               , MO(3)
+                             KC_LALT, KC_LGUI, LT(2, KC_F15), LCTL_T(KC_SPC) , LSFT_T(KC_F16),         KC_BSPC, LSFT_T(KC_ENT), RCTL_T(KC_LNG2),     KC_RALT             , MO(3)
                           //--------+--------+--------------+----------------+---------------'       `--------+-------+---------+--------------------------.
   ),
 
