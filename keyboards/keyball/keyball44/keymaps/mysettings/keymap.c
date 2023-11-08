@@ -266,9 +266,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
   [5] = LAYOUT_universal( // スクロールレイヤー
-          QK_BOOT  ,  KC_F1   , KC_F2    , KC_F3   , KC_F4    , KC_F5    ,                                         XXXXXXX  , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX   , XXXXXXX   ,
-          _______  ,  _______ , _______  , KC_UP   , KC_ENT   , KC_DEL   ,                                         XXXXXXX  , XXXXXXX  , XXXXXXX    , XXXXXXX  , KC_LSFT  , XXXXXXX   ,
-          _______  ,  _______ , KC_LEFT  , KC_DOWN , KC_RGHT  , KC_BSPC  ,                                         XXXXXXX  , LALT(KC_LEFT)  , LALT(KC_RIGHT)  , XXXXXXX  , XXXXXXX  , _______  ,
+          QK_BOOT  ,  _______   , _______    , _______   , _______    , _______    ,                                         XXXXXXX  , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX   , XXXXXXX   ,
+          _______  ,  _______ , _______  , _______   , _______   , _______   ,                               KC_MY_BTN3  , KC_MY_BTN1  , KC_MY_BTN2    , XXXXXXX  , KC_LSFT  , XXXXXXX   ,
+          KC_LCTL  ,  _______ , _______  , _______ , _______  , _______  ,                                         XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , XXXXXXX  , _______  ,
           _______  , _______ , _______  ,         _______  , _______  ,                   _______  , _______  , _______       , _______  , _______
           ),
 };
