@@ -244,10 +244,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [2] = LAYOUT_universal( // 数字・記号レイヤー
   //,------------------.-----------------------------------------------------                                ,-----------------------------------------------------------.
-    _______  , KC_GRV , _______     , KC_LPRN     , KC_RPRN    ,   _______,                                         XXXXXXX , KC_7   , KC_8     , KC_9, KC_0     ,  KC_F2 ,
-    _______  , KC_BSLS, _______     , KC_LBRC     , KC_RBRC    ,   _______,                                         XXXXXXX , KC_4   , KC_5     , KC_6, KC_SCLN  , XXXXXXX ,
-    _______  , _______, _______     , _______    , _______     ,   _______,                                         KC_DOT  , KC_1   , KC_2     , KC_3, KC_SLSH  , XXXXXXX,
-                          _______  , _______  , _______ ,   _______, _______  ,                    KC_DEL   , _______ , _______, _______        , _______
+    LGUI_T(KC_GRV)  , KC_GRV , _______     , KC_LPRN     , KC_RPRN    ,   _______,                                         XXXXXXX , KC_7   , KC_8     , KC_9, KC_0     ,  KC_F2 ,
+    _______         , KC_BSLS, _______     , KC_LBRC     , KC_RBRC    ,   _______,                                         XXXXXXX , KC_4   , KC_5     , KC_6, KC_SCLN  , XXXXXXX ,
+    _______         , _______, _______     , _______    , _______     ,   _______,                                         KC_DOT  , KC_1   , KC_2     , KC_3, KC_SLSH  , XXXXXXX,
+                             _______  , _______  , _______ ,   _______, _______  ,                    KC_DEL   , _______ , _______, _______        , _______
   ),
 
   [3] = LAYOUT_universal( // カーソルレイヤー
@@ -261,7 +261,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______  ,  KC_F1   , KC_F2    , KC_F3   , KC_F4    , KC_F5    ,                                         XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX   , XXXXXXX   ,
     // _______  ,  _______ , _______  , KC_UP   , KC_ENT   , KC_DEL   ,                                         KC_MY_BTN3  , KC_MY_BTN1  , KC_MY_BTN2    , KC_LSFT  , MO(5)  , XXXXXXX   ,
     _______  ,  _______ , _______  , KC_UP   , KC_ENT   , KC_DEL   ,                                         KC_BTN3  , KC_BTN1  , KC_BTN2    , KC_LSFT  , MO(5)  , XXXXXXX   ,
-          _______  ,  _______ , KC_LEFT  , KC_DOWN , KC_RGHT  , KC_BSPC  ,                                         XXXXXXX  , LALT(KC_LEFT)  , LALT(KC_RIGHT)  , XXXXXXX  , XXXXXXX  , _______  ,
+          _______  ,  _______ , KC_LEFT  , KC_DOWN , KC_RGHT  , KC_BSPC  ,                                         XXXXXXX  , KC_WWW_BACK  , KC_WWW_FORWARD  , XXXXXXX  , XXXXXXX  , _______  ,
                   _______  , _______ , _______  ,         _______  , MO(4)  ,                   _______  , _______  , _______       , _______  , _______
   ),
 
