@@ -225,7 +225,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,---------------+--.---+--------+--------+------------------------------------------------                ,-------+---------------------------------------------.
     KC_LSFT         , KC_Z , KC_X   , KC_C   , KC_V         , KC_B           ,                                  KC_N  , KC_M    , KC_COMM  , KC_DOT   , LT(3, KC_SLSH)  , KC_EQL  ,
   //,---------------+--.---+--------+--------+------------------------------------------------                ,-------+---------------------------------------------.
-                             KC_LALT, KC_LGUI, LT(2, KC_LGUI), LGUI_T(KC_SPC) , LSFT_T(KC_RGUI),       KC_BSPC, LSFT_T(KC_ENT), RCTL_T(KC_LNG2),     KC_RALT             , MO(5)
+                             KC_LALT, KC_LGUI, LT(2, KC_LGUI), LGUI_T(KC_SPC) , LSFT_T(KC_RGUI),       KC_BSPC, LSFT_T(KC_ENT), RCTL_T(KC_LNG2),     KC_RALT             , MO(4)
                           //--------+--------+--------------+----------------+---------------'       `--------+-------+---------+--------------------------.
   ),
 
@@ -238,7 +238,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,------------+--.---+-----------------+--------------+----------------                                 ,-------+---------------------------------------------.
     _______      , _______ , _______      , _______         , _______ , _______    ,                                  _______  , _______    , _______  , _______   , _______  , _______  ,
   //,------------+--.---+-----------------+--------------+----------------                                 ,-------+---------------------------------------------.
-                             KC_LGUI, KC_LALT, LT(2, KC_F15), LCTL_T(KC_SPC) , LSFT_T(KC_F16),         KC_BSPC, LSFT_T(KC_ENT), RCTL_T(KC_LNG2),     KC_RALT             , MO(5)
+                             KC_LGUI, KC_LALT, LT(2, KC_F15), LCTL_T(KC_SPC) , LSFT_T(KC_F16),         KC_BSPC, LSFT_T(KC_ENT), RCTL_T(KC_LNG2),     KC_RALT             , MO(4)
                           //--------+--------+--------------+----------------+---------------'       `--------+-------+---------+--------------------------.
   ),
 
@@ -257,20 +257,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   _______  , _______ , _______  ,         _______  , MO(4)  ,                   _______  , _______  , _______       , _______  , _______
   ),
 
-  [4] = LAYOUT_universal( // マウスレイヤー
-    _______  ,  KC_F1   , KC_F2    , KC_F3   , KC_F4    , KC_F5    ,                                         XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX    , XXXXXXX   , XXXXXXX   ,
-    // _______  ,  _______ , _______  , KC_UP   , KC_ENT   , KC_DEL   ,                                         KC_MY_BTN3  , KC_MY_BTN1  , KC_MY_BTN2    , KC_LSFT  , MO(5)  , XXXXXXX   ,
-    _______  ,  _______ , _______  , KC_UP   , KC_ENT   , KC_DEL   ,                                         KC_BTN3  , KC_BTN1  , KC_BTN2    , KC_LSFT  , MO(5)  , XXXXXXX   ,
-          _______  ,  _______ , KC_LEFT  , KC_DOWN , KC_RGHT  , KC_BSPC  ,                                         XXXXXXX  , KC_WWW_BACK  , KC_WWW_FORWARD  , XXXXXXX  , XXXXXXX  , _______  ,
-                  _______  , _______ , _______  ,         _______  , MO(4)  ,                   _______  , _______  , _______       , _______  , _______
-  ),
-
-
-  [5] = LAYOUT_universal( // スクロールレイヤー
+  [4] = LAYOUT_universal( // スクロールレイヤー
           QK_BOOT  ,  _______   , _______    , _______   , _______    , _______    ,                                         DF(0)  , DF(1)    , XXXXXXX    , XXXXXXX    , XXXXXXX   , XXXXXXX   ,
           // _______  ,  _______ , _______  , _______   , _______   , _______   ,                               KC_MY_BTN3  , KC_MY_BTN1  , KC_MY_BTN2    , XXXXXXX  , KC_LSFT  , XXXXXXX   ,
           _______  ,  _______ , _______  , _______   , _______   , _______   ,                               KC_BTN3  , KC_BTN1  , KC_BTN2    , XXXXXXX  , KC_LSFT  , XXXXXXX   ,
-          KC_LCTL  ,  _______ , _______  , _______ , _______  , _______  ,                                         XXXXXXX  , LALT(KC_LEFT)  , LALT(KC_RIGHT)  , XXXXXXX  , XXXXXXX  , _______  ,
+          KC_LCTL  ,  _______ , _______  , _______ , _______  , _______  ,                                         XXXXXXX  , KC_WWW_BACK  , KC_WWW_FORWARD  , XXXXXXX  , XXXXXXX  , _______  ,
           _______  , _______ , _______  ,         _______  , _______  ,                   _______  , _______  , _______       , _______  , _______
           ),
 };
