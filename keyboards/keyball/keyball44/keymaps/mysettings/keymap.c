@@ -221,11 +221,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,------------------.----------------------------------------------------------------------                ,-----------------------------------------------------.
     KC_TAB          , KC_Q , KC_W   , KC_E   , KC_R         , KC_T           ,                                  KC_Y  , KC_U    , KC_I     , KC_O     , KC_P     , KC_MINS  ,
   //,---------------+--.---+--------+--------+------------------------------------------------                ,-------+---------------------------------------------.
-    LCTL_T(KC_ESC)  , KC_A , KC_S   , KC_D   , KC_F         , KC_G           ,                                  KC_H  , KC_J    , KC_K     , LT(5, KC_L), KC_SCLN, KC_QUOT ,
+    LCTL_T(KC_ESC)  , KC_A , KC_S   , KC_D   , KC_F         , KC_G           ,                                  KC_H  , KC_J    , KC_K     , LT(4, KC_L), KC_SCLN, KC_QUOT ,
   //,---------------+--.---+--------+--------+------------------------------------------------                ,-------+---------------------------------------------.
     KC_LSFT         , KC_Z , KC_X   , KC_C   , KC_V         , KC_B           ,                                  KC_N  , KC_M    , KC_COMM  , KC_DOT   , LT(3, KC_SLSH)  , KC_EQL  ,
   //,---------------+--.---+--------+--------+------------------------------------------------                ,-------+---------------------------------------------.
-                             KC_LALT, KC_LGUI, LT(2, KC_LGUI), LGUI_T(KC_SPC) , LSFT_T(KC_RGUI),       KC_BSPC, LSFT_T(KC_ENT), RCTL_T(KC_LNG2),     KC_RALT             , MO(4)
+                             KC_LALT, KC_LGUI, LT(2, KC_LGUI), LGUI_T(KC_SPC) , LSFT_T(KC_RGUI),       KC_BSPC, LSFT_T(KC_ENT), RCTL_T(KC_LNG2),     KC_RALT             , MO(3)
                           //--------+--------+--------------+----------------+---------------'       `--------+-------+---------+--------------------------.
   ),
 
@@ -238,7 +238,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,------------+--.---+-----------------+--------------+----------------                                 ,-------+---------------------------------------------.
     _______      , _______ , _______      , _______         , _______ , _______    ,                                  _______  , _______    , _______  , _______   , _______  , _______  ,
   //,------------+--.---+-----------------+--------------+----------------                                 ,-------+---------------------------------------------.
-                             KC_LGUI, KC_LALT, LT(2, KC_F15), LCTL_T(KC_SPC) , LSFT_T(KC_F16),         KC_BSPC, LSFT_T(KC_ENT), RCTL_T(KC_LNG2),     KC_RALT             , MO(4)
+                             KC_LGUI, KC_LALT, LT(2, KC_F15), LCTL_T(KC_SPC) , LSFT_T(KC_F16),         KC_BSPC, LSFT_T(KC_ENT), RCTL_T(KC_LNG2),     KC_RALT             , _______
                           //--------+--------+--------------+----------------+---------------'       `--------+-------+---------+--------------------------.
   ),
 
@@ -257,9 +257,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                   _______  , _______ , _______  ,         _______  , MO(4)  ,                   _______  , _______  , _______       , _______  , _______
   ),
 
-  [4] = LAYOUT_universal( // スクロールレイヤー
+  [4] = LAYOUT_universal( // マウスレイヤー
           QK_BOOT  ,  _______   , _______    , _______   , _______    , _______    ,                                         DF(0)  , DF(1)    , XXXXXXX    , XXXXXXX    , XXXXXXX   , XXXXXXX   ,
-          // _______  ,  _______ , _______  , _______   , _______   , _______   ,                               KC_MY_BTN3  , KC_MY_BTN1  , KC_MY_BTN2    , XXXXXXX  , KC_LSFT  , XXXXXXX   ,
           _______  ,  _______ , _______  , _______   , _______   , _______   ,                               KC_BTN3  , KC_BTN1  , KC_BTN2    , XXXXXXX  , KC_LSFT  , XXXXXXX   ,
           KC_LCTL  ,  _______ , _______  , _______ , _______  , _______  ,                                         XXXXXXX  , KC_WWW_BACK  , KC_WWW_FORWARD  , XXXXXXX  , XXXXXXX  , _______  ,
           _______  , _______ , _______  ,         _______  , _______  ,                   _______  , _______  , _______       , _______  , _______
@@ -269,7 +268,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     // Auto enable scroll mode when the highest layer is 3
-    keyball_set_scroll_mode(get_highest_layer(state) == 5);
+    keyball_set_scroll_mode(get_highest_layer(state) == 4);
     return state;
 }
 
