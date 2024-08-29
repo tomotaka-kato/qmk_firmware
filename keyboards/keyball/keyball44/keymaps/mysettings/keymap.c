@@ -244,7 +244,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [2] = LAYOUT_universal( // 数字・記号レイヤー
   //,------------------.-----------------------------------------------------                                ,-----------------------------------------------------------.
-    LGUI_T(KC_GRV)  , KC_GRV , _______     , KC_LPRN     , KC_RPRN    ,   _______,                                         XXXXXXX , KC_7   , KC_8     , KC_9, KC_0     ,  KC_F2 ,
+    LGUI(KC_GRV)  , KC_GRV , _______     , KC_LPRN     , KC_RPRN    ,   _______,                                         XXXXXXX , KC_7   , KC_8     , KC_9, KC_0     ,  KC_F2 ,
     _______         , KC_BSLS, _______     , KC_LBRC     , KC_RBRC    ,   _______,                                         XXXXXXX , KC_4   , KC_5     , KC_6, KC_SCLN  , XXXXXXX ,
     _______         , _______, _______     , _______    , _______     ,   _______,                                         KC_DOT  , KC_1   , KC_2     , KC_3, KC_SLSH  , XXXXXXX,
                              _______  , _______  , _______ ,   _______, _______  ,                    KC_DEL   , _______ , _______, _______        , _______
