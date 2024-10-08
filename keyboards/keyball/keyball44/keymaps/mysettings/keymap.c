@@ -260,7 +260,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [4] = LAYOUT_universal( // マウスレイヤー
           QK_BOOT  ,  _______   , _______    , _______   , _______    , _______    ,                                         DF(0)  , DF(1)    , XXXXXXX    , XXXXXXX    , XXXXXXX   , XXXXXXX   ,
           _______  ,  _______ , _______  , _______   , _______   , _______   ,                               KC_BTN3  , KC_BTN1  , KC_BTN2    , XXXXXXX  , KC_LSFT  , XXXXXXX   ,
-          KC_LCTL  ,  _______ , _______  , _______ , _______  , _______  ,                                         XXXXXXX  , KC_WWW_BACK  , KC_WWW_FORWARD  , XXXXXXX  , XXXXXXX  , _______  ,
+          KC_LCTL  ,  _______ , _______  , _______ , _______  , _______  ,                                         XXXXXXX  , LGUI(KC_LBRC)  , LGUI(KC_RBRC)  , XXXXXXX  , XXXXXXX  , _______  ,
           _______  , _______ , _______  ,         _______  , _______  ,                   _______  , _______  , _______       , _______  , _______
           ),
 };
